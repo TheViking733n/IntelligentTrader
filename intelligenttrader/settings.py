@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-i01l&7e1q8(142v%%)^-kd2^3yx2-&0dk@^r&t_gvth!7%8++&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'localhost',]
+ALLOWED_HOSTS = ['localhost', '*.vercel.app', '.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -75,12 +75,22 @@ WSGI_APPLICATION = 'intelligenttrader.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+from decouple import config
+DATABASE_URL = config('POSTGRES_URL')
+import dj_database_url
+DATABASES = {}
+DATABASES['default'] = dj_database_url.parse(
+    url=DATABASE_URL,
+    # conn_max_age=600,
+    # conn_health_checks=True,
+)
 
 
 # Password validation
@@ -119,11 +129,20 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    # '/var/www/static/',
-]
-STATIC_ROOT = BASE_DIR / "assets"
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+#     # '/var/www/static/',
+# ]
+# STATIC_ROOT = BASE_DIR / "assets"
+
+
+import os
+# For Vercel deployment
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
