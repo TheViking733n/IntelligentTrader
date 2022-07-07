@@ -1,0 +1,840 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block header %}
+	<!-- Header Top ==== -->
+    <header class="header rs-nav header-transparent">
+		<div class="top-bar">
+			<div class="container">
+				<div class="row d-flex justify-content-between">
+					<div class="topbar-left">
+						<ul>
+							<li><a href="javascript:;"><i class="fa fa-question-circle"></i>FAQs</a></li>
+							<li><a href="mailto: intelligenttrader123@gmail.com"><i class="fa fa-envelope-o"></i>intelligenttrader123@gmail.com</a></li>
+						</ul>
+					</div>
+					<div class="topbar-right">
+						<ul>
+							<!-- <li>
+								<select class="header-lang-bx">
+									<option data-icon="flag flag-uk">English UK</option>
+									<option data-icon="flag flag-us">English US</option>
+								</select>
+							</li> -->
+							<li><a style="font-size:25px" href="/login">Login</a></li>
+							<li><a style="font-size:25px" href="/signup">Sign Up</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sticky-header navbar-expand-lg">
+            <div class="menu-bar clearfix">
+                <div class="container clearfix">
+					<!-- Header Logo ==== -->
+					<div class="menu-logo">
+						<a href="/"><img src="{% static 'images/logo-400.png' %}" alt=""></a>
+					</div>
+					<!-- Mobile Nav Button ==== -->
+                    <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+					<!-- Author Nav ==== -->
+                    <div class="secondary-menu">
+                        <div class="secondary-inner">
+                            <ul>
+								<li><a href="https://www.youtube.com/channel/UCxQcko8W3B2dQGUww_nzOuA?sub_confirmation=1" class="btn-link"><i class="fa fa-youtube"></i></a></li>
+								<!-- <li><a href="javascript:;" class="btn-link"><i class="fa fa-instagram"></i></a></li> -->
+								<li><a href="https://t.me/intelligenttrader123" class="btn-link"><i class="fa fa-telegram"></i></a></li>
+								<!-- Search Button ==== -->
+								<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+							</ul>
+						</div>
+                    </div>
+					<!-- Search Box ==== -->
+                    <div class="nav-search-bar">
+                        <form action="#">
+                            <input name="search" value="" type="text" class="form-control" placeholder="Type to search">
+                            <span><i class="ti-search"></i></span>
+                        </form>
+						<span id="search-remove"><i class="ti-close"></i></span>
+                    </div>
+					<!-- Navigation Menu ==== -->
+                    <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
+						<div class="menu-logo">
+							<a href="/"><img src="{% static 'images/logo-400.png' %}" alt=""></a>
+						</div>
+                        <ul class="nav navbar-nav">	
+							<li class="active"><a href="javascript:;">Home <i class="fa fa-chevron-down"></i></a>
+								<ul class="sub-menu">
+									<li><a href="/">Home Page</a></li>
+								</ul>
+							</li>
+							<!-- <li><a href="javascript:;">Pages <i class="fa fa-chevron-down"></i></a>
+								<ul class="sub-menu">
+									<li><a href="javascript:;">About<i class="fa fa-angle-right"></i></a>
+										<ul class="sub-menu">
+											<li><a href="about-1.html">About 1</a></li>
+											<li><a href="about-2.html">About 2</a></li>
+										</ul>
+									</li>
+									<li><a href="javascript:;">Event<i class="fa fa-angle-right"></i></a>
+										<ul class="sub-menu">
+											<li><a href="event.html">Event</a></li>
+											<li><a href="events-details.html">Events Details</a></li>
+										</ul>
+									</li>
+									<li><a href="javascript:;">FAQ's<i class="fa fa-angle-right"></i></a>
+										<ul class="sub-menu">
+											<li><a href="faq-1.html">FAQ's 1</a></li>
+											<li><a href="faq-2.html">FAQ's 2</a></li>
+										</ul>
+									</li>
+									<li><a href="javascript:;">Contact Us<i class="fa fa-angle-right"></i></a>
+										<ul class="sub-menu">
+											<li><a href="contact-1.html">Contact Us 1</a></li>
+											<li><a href="contact-2.html">Contact Us 2</a></li>
+										</ul>
+									</li>
+									<li><a href="portfolio.html">Portfolio</a></li>
+									<li><a href="profile.html">Profile</a></li>
+									<li><a href="membership.html">Membership</a></li>
+									<li><a href="error-404.html">404 Page</a></li>
+								</ul>
+							</li> -->
+							<li class="add-mega-menu"><a href="javascript:;">Our Courses <i class="fa fa-chevron-down"></i></a>
+								<ul class="sub-menu add-menu">
+									<li class="add-menu-left">
+										<h5 class="menu-adv-title">Our Courses</h5>
+										<ul>
+											<li><a href="courses-details-beginner.html">Beginner's Booster Course</a></li>
+											<li><a href="courses-details-advanced.html">Advanced Conqueror Course</a></li>
+										</ul>
+									</li>
+									<!-- <li class="add-menu-right">
+										<img src="{% static 'images/adv/adv.jpg' %}" alt=""/>
+									</li> -->
+								</ul>
+							</li>
+							<li class="add-mega-menu"><a href="javascript:;">Know More<i class="fa fa-chevron-down"></i></a>
+								<ul class="sub-menu add-menu">
+									<li class="add-menu-left">
+										<h5 class="menu-adv-title">Know More</h5>
+										<ul>
+											<li><a href="about.html">About Us</a></li>
+											<li><a href="contact.html">Contact Us</a></li>
+											<li><a href="TnC.html">Terms and Conditions</a></li>
+											<li><a href="privacy-policy.html">Privacy Policy</a></li>
+											<li><a href="refund-policy.html">Refund Policy</a></li>
+										</ul>
+									</li>
+									<!-- <li class="add-menu-right">
+										<img src="{% static 'images/adv/adv.jpg' %}" alt=""/>
+									</li> -->
+								</ul>
+							</li>
+							<!-- <li><a href="javascript:;">Blog <i class="fa fa-chevron-down"></i></a>
+								<ul class="sub-menu">
+									<li><a href="blog-classic-grid.html">Blog Classic</a></li>
+									<li><a href="blog-classic-sidebar.html">Blog Classic Sidebar</a></li>
+									<li><a href="blog-list-sidebar.html">Blog List Sidebar</a></li>
+									<li><a href="blog-standard-sidebar.html">Blog Standard Sidebar</a></li>
+									<li><a href="blog-details.html">Blog Details</a></li>
+								</ul>
+							</li>
+							<li class="nav-dashboard"><a href="javascript:;">Dashboard <i class="fa fa-chevron-down"></i></a>
+								<ul class="sub-menu">
+									<li><a href="admin/index.html">Dashboard</a></li>
+									<li><a href="admin/add-listing.html">Add Listing</a></li>
+									<li><a href="admin/bookmark.html">Bookmark</a></li>
+									<li><a href="admin/courses.html">Courses</a></li>
+									<li><a href="admin/review.html">Review</a></li>
+									<li><a href="admin/teacher-profile.html">Teacher Profile</a></li>
+									<li><a href="admin/user-profile.html">User Profile</a></li>
+									<li><a href="javascript:;">Calendar<i class="fa fa-angle-right"></i></a>
+										<ul class="sub-menu">
+											<li><a href="admin/basic-calendar.html">Basic Calendar</a></li>
+											<li><a href="admin/list-view-calendar.html">List View Calendar</a></li>
+										</ul>
+									</li>
+									<li><a href="javascript:;">Mailbox<i class="fa fa-angle-right"></i></a>
+										<ul class="sub-menu">
+											<li><a href="admin/mailbox.html">Mailbox</a></li>
+											<li><a href="admin/mailbox-compose.html">Compose</a></li>
+											<li><a href="admin/mailbox-read.html">Mail Read</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li> -->
+						</ul>
+						<div class="nav-social-link">
+							<a href="https://www.youtube.com/channel/UCxQcko8W3B2dQGUww_nzOuA?sub_confirmation=1" class="btn-link"><i class="fa fa-youtube fa-lg"></i></a>
+							<!-- <a href="#" class="btn-link"><i class="fa fa-instagram"></i></a> -->
+							<a href="https://t.me/intelligenttrader123" class="btn-link"><i class="fa fa-telegram"></i></a>
+						</div>
+                    </div>
+					<!-- Navigation Menu END ==== -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Top END ==== -->
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Content -->
+    <div class="page-content bg-white">
+        <!-- Main Slider -->
+        <div class="rev-slider">
+			<div id="rev_slider_486_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="news-gallery36" data-source="gallery" style="margin:0px auto;background-color:#ffffff;padding:0px;margin-top:0px;margin-bottom:0px;">
+				<!-- START REVOLUTION SLIDER 5.3.0.2 fullwidth mode -->
+				<div id="rev_slider_486_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.0.2">
+					<ul>	<!-- SLIDE  -->
+						<li data-index="rs-100" 
+						data-transition="parallaxvertical" 
+						data-slotamount="default" 
+						data-hideafterloop="0" 
+						data-hideslideonmobile="off" 
+						data-easein="default" 
+						data-easeout="default" 
+						data-masterspeed="default" 
+						data-thumb="error-404.html" 
+						data-rotate="0" 
+						data-fstransition="fade" 
+						data-fsmasterspeed="1500" 
+						data-fsslotamount="7" 
+						data-saveperformance="off" 
+						data-title="A STUDY ON HAPPINESS" 
+						data-param1="" data-param2="" 
+						data-param3="" data-param4="" 
+						data-param5="" data-param6="" 
+						data-param7="" data-param8="" 
+						data-param9="" data-param10="" 
+						data-description="Science says that Women are generally happier">
+							<!-- MAIN IMAGE -->
+							<img src="{% static 'images/slider/slide1.jpg' %}" alt="" 
+								data-bgposition="center center" 
+								data-bgfit="cover" 
+								data-bgrepeat="no-repeat" 
+								data-bgparallax="10" 
+								class="rev-slidebg" 
+								data-no-retina />
+								
+							<!-- LAYER NR. 1 -->
+							<div class="tp-caption tp-shape tp-shapewrapper " 
+								id="slide-100-layer-1" 
+								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+								data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+								data-width="full"
+								data-height="full"
+								data-whitespace="nowrap"
+								data-type="shape" 
+								data-basealign="slide" 
+								data-responsive_offset="off" 
+								data-responsive="off"
+								data-frames='[{"from":"opacity:0;","speed":1,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1,"to":"opacity:0;","ease":"Power4.easeOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 5;background-color:rgba(2, 0, 11, 0.80);border-color:rgba(0, 0, 0, 0);border-width:0px;"> </div>	
+							<!-- LAYER NR. 2 -->
+							<div class="tp-caption Newspaper-Title   tp-resizeme" 
+								id="slide-100-layer-2" 
+								data-x="['center','center','center','center']" 
+								data-hoffset="['0','0','0','0']" 
+								data-y="['top','top','top','top']" 
+								data-voffset="['250','250','250','240']" 
+								data-fontsize="['50','50','50','30']"
+								data-lineheight="['55','55','55','35']"
+								data-width="full"
+								data-height="none"
+								data-whitespace="normal"
+								data-type="text" 
+								data-responsive_offset="on" 
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[10,10,10,10]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
+									Intelligent Trader
+							</div>
+
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
+								id="slide-100-layer-3" 
+								data-x="['center','center','center','center']" 
+								data-hoffset="['0','0','0','0']" 
+								data-y="['top','top','top','top']" 
+								data-voffset="['210','210','210','210']" 
+								data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-type="text" 
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; white-space: nowrap; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
+									
+							</div>
+							
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
+								id="slide-100-layer-4" 
+								data-x="['center','center','center','center']" 
+								data-hoffset="['0','0','0','0']" 
+								data-y="['top','top','top','top']" 
+								data-voffset="['320','320','320','290']" 
+								data-width="['800','800','700','420']"
+								data-height="['100','100','100','120']"
+								data-whitespace="unset"
+								data-type="text" 
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
+								We are here to provide the simple and best education of Stock market. We are simply providing knowledge and experience so that everyone can know more about Stock market.
+							</div>
+							<!-- LAYER NR. 4 -->
+							<div class="tp-caption Newspaper-Button rev-btn " 
+								id="slide-100-layer-5" 
+								data-x="['center','center','center','center']" 
+								data-hoffset="['90','80','75','90']" 
+								data-y="['top','top','top','top']" 
+								data-voffset="['400','400','400','420']" 
+								data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-type="button" 
+								data-responsive_offset="on" 
+								data-responsive="off"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[12,12,12,12]"
+								data-paddingright="[30,35,35,15]"
+								data-paddingbottom="[12,12,12,12]"
+								data-paddingleft="[30,35,35,15]"
+								
+								<div class="tp-caption Newspaper-Button rev-btn" 
+								id="slide-100-layer-6" 
+								data-x="['center','center','center','center']" 
+								data-hoffset="['-90','-80','-75','-90']" 
+								data-y="['top','top','top','top']" 
+								data-voffset="['400','400','400','420']" 
+								data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-type="button" 
+								data-responsive_offset="on" 
+								data-responsive="off"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[12,12,12,12]"
+								data-paddingright="[30,35,35,15]"
+								data-paddingbottom="[12,12,12,12]"
+								data-paddingleft="[30,35,35,15]"
+								
+						</li>
+						<li data-index="rs-200" 
+						data-transition="parallaxvertical" 
+						data-slotamount="default" 
+						data-hideafterloop="0" 
+						data-hideslideonmobile="off" 
+						data-easein="default" 
+						data-easeout="default" 
+						data-masterspeed="default" 
+						data-thumb="{% static 'images/slider/slide1.jpg' %}" 
+						data-rotate="0" 
+						data-fstransition="fade" 
+						data-fsmasterspeed="1500" 
+						data-fsslotamount="7" 
+						data-saveperformance="off" 
+						data-title="A STUDY ON HAPPINESS" 
+						data-param1="" data-param2="" 
+						data-param3="" data-param4="" 
+						data-param5="" data-param6="" 
+						data-param7="" data-param8="" 
+						data-param9="" data-param10="" 
+						data-description="Science says that Women are generally happier">
+							<!-- MAIN IMAGE -->
+							<img src="{% static 'images/slider/slide2.jpg' %}" alt="" 
+								data-bgposition="center center" 
+								data-bgfit="cover" 
+								data-bgrepeat="no-repeat" 
+								data-bgparallax="10" 
+								class="rev-slidebg" 
+								data-no-retina />
+								
+							<!-- LAYER NR. 1 -->
+							<div class="tp-caption tp-shape tp-shapewrapper " 
+								id="slide-200-layer-1" 
+								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+								data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+								data-width="full"
+								data-height="full"
+								data-whitespace="nowrap"
+								data-type="shape" 
+								data-basealign="slide" 
+								data-responsive_offset="off" 
+								data-responsive="off"
+								data-frames='[{"from":"opacity:0;","speed":1,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:1;","ease":"Power4.easeOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 5;background-color:rgba(2, 0, 11, 0.80);border-color:rgba(0, 0, 0, 0);border-width:0px;"> 
+							</div>
+
+							<!-- LAYER NR. 2 -->
+							<div class="tp-caption Newspaper-Title   tp-resizeme" 
+								id="slide-200-layer-2" 
+								data-x="['center','center','center','center']" 
+								data-hoffset="['0','0','0','0']" 
+								data-y="['top','top','top','top']" 
+								data-voffset="['250','250','250','240']" 
+								data-fontsize="['50','50','50','30']"
+								data-lineheight="['55','55','55','35']"
+								data-width="full"
+								data-height="none"
+								data-whitespace="normal"
+								data-type="text" 
+								data-responsive_offset="on" 
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[10,10,10,10]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;text-transform:uppercase;">
+									Intelligent Trader
+							</div>
+
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
+								id="slide-200-layer-3" 
+								data-x="['center','center','center','center']" 
+								data-hoffset="['0','0','0','0']" 
+								data-y="['top','top','top','top']" 
+								data-voffset="['210','210','210','210']" 
+								data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-type="text" 
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['left','left','left','left']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
+									Batter Education For A Better 
+							</div>
+							
+							<!-- LAYER NR. 3 -->
+							<div class="tp-caption Newspaper-Subtitle   tp-resizeme" 
+								id="slide-200-layer-4" 
+								data-x="['center','center','center','center']" 
+								data-hoffset="['0','0','0','0']" 
+								data-y="['top','top','top','top']" 
+								data-voffset="['320','320','320','290']" 
+								data-width="['800','800','700','420']"
+								data-height="['100','100','100','120']"
+								data-whitespace="unset"
+								data-type="text" 
+								data-responsive_offset="on"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[0,0,0,0]"
+								data-paddingright="[0,0,0,0]"
+								data-paddingbottom="[0,0,0,0]"
+								data-paddingleft="[0,0,0,0]"
+								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
+								We Are Here To Provide The Simple And Best Education Of Stock Market. We Are Simply Providing Knowledge And Experience So That Everyone Can Know More About Stock Market.
+							</div>
+							<!-- LAYER NR. 4 -->
+							<div class="tp-caption Newspaper-Button rev-btn " 
+								id="slide-200-layer-5" 
+								data-x="['center','center','center','center']" 
+								data-hoffset="['90','80','75','90']" 
+								data-y="['top','top','top','top']" 
+								data-voffset="['400','400','400','420']" 
+								data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-type="button" 
+								data-responsive_offset="on" 
+								data-responsive="off"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[12,12,12,12]"
+								data-paddingright="[30,35,35,15]"
+								data-paddingbottom="[12,12,12,12]"
+								data-paddingleft="[30,35,35,15]"
+								
+							<div class="tp-caption Newspaper-Button rev-btn" 
+								id="slide-200-layer-6" 
+								data-x="['center','center','center','center']" 
+								data-hoffset="['-90','-80','-75','-90']" 
+								data-y="['top','top','top','top']" 
+								data-voffset="['400','400','400','420']" 
+								data-width="none"
+								data-height="none"
+								data-whitespace="nowrap"
+								data-type="button" 
+								data-responsive_offset="on" 
+								data-responsive="off"
+								data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+								data-textAlign="['center','center','center','center']"
+								data-paddingtop="[12,12,12,12]"
+								data-paddingright="[30,35,35,15]"
+								data-paddingbottom="[12,12,12,12]"
+								data-paddingleft="[30,35,35,15]"
+								
+						</li>
+						<!-- SLIDE  -->
+					</ul>
+				</div><!-- END REVOLUTION SLIDER -->  
+			</div>  
+		</div>  
+        <!-- Main Slider -->
+		<div class="content-block">
+            
+
+			<!-- Our Services -->
+			<div class="section-area content-inner service-info-bx">
+                <div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-4 col-sm-6">
+							<div class="service-bx">
+								<div class="action-box">
+									<img src="{% static 'images/courses/Beginners.jpg' %}" alt="">
+								</div>
+								<div class="info-bx text-center">
+									<div class="feature-box-sm radius bg-white">
+										<i class="fa fa-book text-primary"></i>
+									</div>
+									<h4><a href="courses-details-beginner.html">Beginner's Booster Course</a></h4>
+									<h4><a><b style="color:red;">Limited Offer</b></a></h4>
+									<h4><a><i><del style="color:grey;">₹ 1500</del></i>&nbsp&nbsp&nbsp<b>₹ 1299</b></a></h4>
+									<a href="https://rzp.io/l/nzP5QmhAT" class="btn radius-xl" style="font-size: 20px;">Buy Now</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-4 col-sm-6">
+							<div class="service-bx">
+								<div class="action-box">
+									<img src="{% static 'images/courses/Advanced.jpg' %}" alt="">
+								</div>
+								<div class="info-bx text-center">
+									<div class="feature-box-sm radius bg-white">
+										<i class="fa fa-book text-primary"></i>
+									</div>
+									<h4><a href="courses-details-advanced.html">Advanced Conqueror Course</a></h4>
+									<h4><a><b style="color:red;">Limited Offer</b></a></h4>
+									<h4><a><i><del style="color:grey;">₹ 2200</del></i>&nbsp&nbsp&nbsp<b>₹ 1999</b></a></h4>
+									<a href="https://rzp.io/l/QDqSmgcLP9" class="btn radius-xl" style="font-size: 20px;">Buy Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+            <!-- Our Services END -->
+			
+
+			<!-- Popular Courses -->
+			<div class="section-area section-sp2 popular-courses-bx">
+                <div class="container">
+					<div class="row">
+						<div class="col-md-12 heading-bx">
+							<h2 class="title-head">Popular <span>Courses</span></h2>
+							<div class="py-3"><p>The analysis that we provide to you is done by Aman Srivastav himself. He has rich experience in the field of the Stock Market and Option Trading. Having learned from veterans in the field of the stock market, he has adopted a practical approach and analyse charts in the most simplified manner<br><br></r></p></div>
+						</div>
+					</div>
+					<div class="row">
+					<div class="courses-carousel owl-carousel owl-btn-1 col-12 p-lr0">
+						<div class="item">
+							<div class="cours-bx">
+								<div class="action-box">
+									<img src="{% static 'images/courses/Beginners.jpg' %}" alt="">
+									<a href="courses-details-beginner.html" class="btn">Read More</a>
+								</div>
+								<div class="info-bx text-center">
+									<h5><a href="courses-details-beginner.html">Beginner's Booster Course</a></h5>
+									<span>Option Trading</span>
+								</div>
+								<div class="cours-more-info">
+									<div class="review">
+										<span>76 Review</span>
+										<ul class="cours-star">
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<!-- <li><i class="fa fa-star"></i></li> -->
+										</ul>
+									</div>
+									<div class="price">
+										<del>₹ 1500</del>
+										<h5>₹ 1299</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="cours-bx">
+								<div class="action-box">
+									<img src="{% static 'images/courses/Advanced.jpg' %}" alt="">
+									<a href="courses-details-advanced.html" class="btn">Read More</a>
+								</div>
+								<div class="info-bx text-center">
+									<h5><a href="courses-details-advanced.html">Advanced Conqueror Course</a></h5>
+									<span>Option Trading</span>
+								</div>
+								<div class="cours-more-info">
+									<div class="review">
+										<span>37 Review</span>
+										<ul class="cours-star">
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<!-- <li><i class="fa fa-star"></i></li> -->
+										</ul>
+									</div>
+									<div class="price">
+										<del>₹ 2200</del>
+										<h5>₹ 1999</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<!-- Popular Courses END -->
+			
+
+
+			<div class="section-area section-sp2">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center heading-bx">
+							<h2 class="title-head m-b0">Upcoming <span>Events</span></h2>
+							<p class="m-b0">Release date of various courses.</p>
+						</div>
+					</div>
+					<div class="row">
+					<div class="upcoming-event-carousel owl-carousel owl-btn-center-lr owl-btn-1 col-12 p-lr0  m-b30">
+						<div class="item">
+							<div class="event-bx">
+								<div class="action-box">
+									<img src="{% static 'images/courses/Beginners.jpg' %}" alt="">
+								</div>
+								<div class="info-bx d-flex">
+									<div>
+										<div class="event-time">
+											<div class="event-date">14</div>
+											<div class="event-month">February</div>
+											<div class="event-month">2022</div>
+										</div>
+									</div>
+									<div class="event-info">
+										<h4 class="event-title"><a href="courses-details-beginner.html">Beginner's Booster Course</a></h4>
+										<!-- <ul class="media-post">
+											<li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
+											<li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
+										</ul> -->
+										<ul class="media-post">
+											<li><a>Batch 1</a></li>
+										</ul>
+										<p>This is a beginner's course for all those who are new in stock market and has no proper knowledge about market and its daily movements. 
+											We are here to provide best and simple education of stock market so that you can also slowly and steadily become a good profitable trader. 
+											If you want to earn consistently from market you have to follow some disciplined rules of stock market and maintain your psychology in live market. </p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="event-bx">
+								<div class="action-box">
+									<img src="{% static 'images/courses/Advanced.jpg' %}" alt="">
+								</div>
+								<div class="info-bx d-flex">
+									<div>
+										<div class="event-time">
+											<div class="event-date">15</div>
+											<div class="event-month">February</div>
+											<div class="event-month">2022</div>
+										</div>
+									</div>
+									<div class="event-info">
+										<h4 class="event-title"><a href="courses-details-advanced.html">Advanced Conqueror Course</a></h4>
+										<!-- <ul class="media-post">
+											<li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
+											<li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
+										</ul> -->
+										<ul class="media-post">
+											<li><a>Batch 1</a></li>
+										</ul>
+										<p>Advanced course basically contains much more knowledge about Option Trading, what are Derivatives, what is Future Trading, how to Sell Options and some type of Advanced Strategies. 
+											We will also learn about time decays and different types of volatilities. 
+											Those who want to join this course are expected to have basic knowledge stock market, candlesticks patterns and risk management. </p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="event-bx">
+								<div class="action-box">
+									<img src="{% static 'images/courses/Beginners.jpg' %}" alt="">
+								</div>
+								<div class="info-bx d-flex">
+									<div>
+										<div class="event-time">
+											<div class="event-date">1</div>
+											<div class="event-month">March</div>
+											<div class="event-month">2022</div>
+										</div>
+									</div>
+									<div class="event-info">
+										<h4 class="event-title"><a href="courses-details-beginner.html">Beginner's Booster Course</a></h4>
+										<!-- <ul class="media-post">
+											<li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
+											<li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
+										</ul> -->
+										<ul class="media-post">
+											<li><a>Batch 2</a></li>
+										</ul>
+										<p>This is a beginner's course for all those who are new in stock market and has no proper knowledge about market and its daily movements. 
+											We are here to provide best and simple education of stock market so that you can also slowly and steadily become a good profitable trader. 
+											If you want to earn consistently from market you have to follow some disciplined rules of stock market and maintain your psychology in live market.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="event-bx">
+								<div class="action-box">
+									<img src="{% static 'images/courses/Advanced.jpg' %}" alt="">
+								</div>
+								<div class="info-bx d-flex">
+									<div>
+										<div class="event-time">
+											<div class="event-date">2</div>
+											<div class="event-month">March</div>
+											<div class="event-month">2022</div>
+										</div>
+									</div>
+									<div class="event-info">
+										<h4 class="event-title"><a href="courses-details-advanced.html">Advanced Conqueror Course</a></h4>
+										<!-- <ul class="media-post">
+											<li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
+											<li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
+										</ul> -->
+										<ul class="media-post">
+											<li><a>Batch 2</a></li>
+										</ul>
+										<p>Advanced course basically contains much more knowledge about Option Trading, what are Derivatives, what is Future Trading, how to Sell Options and some type of Advanced Strategies. 
+											We will also learn about time decays and different types of volatilities. 
+											Those who want to join this course are expected to have basic knowledge stock market, candlesticks patterns and risk management. </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- </div>
+					<div class="text-center">
+						<a href="#" class="btn">View All Event</a>
+					</div> -->
+				</div>
+			</div>
+			
+
+			<!-- Testimonials -->
+			<div class="section-area section-sp2 bg-fix ovbl-dark" style="background-image:url({% static 'images/background/bg1.jpg' %});">
+                <div class="container">
+					<div class="row">
+						<div class="col-md-12 text-white heading-bx left">
+							<h2 class="title-head text-uppercase">Don't Take Our Word For It. Hear What Our Customers<span> Say.</span></h2>
+							<p>We love our fans and crafty friends! See what some of them have to say about us! We take our work seriously and want you to be happy. We’re proud and honored to have received thousands of positive comments!</p>
+						</div>
+					</div>
+					<div class="testimonial-carousel owl-carousel owl-btn-1 col-12 p-lr0">
+						<div class="item">
+							<div class="testimonial-bx">
+								<div class="testimonial-thumb">
+									<img src="{% static 'images/avatars/male-person-2.jpg' %}" alt="">
+								</div>
+								<div class="testimonial-info">
+									<h5 class="name">Anant Prakash</h5>
+									<p>-Student</p>
+								</div>
+								<div class="testimonial-content">
+									<p>After attending course I got great knowledge and experience from Sir in the field of stock market. Sir has taught all the lessons very properly and with full energy. He also kept us always motivated so that we can trade best in upcoming days. </p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimonial-bx">
+								<div class="testimonial-thumb">
+									<img src="{% static 'images/avatars/male-person-4.jpg' %}" alt="">
+								</div>
+								<div class="testimonial-info">
+									<h5 class="name">Ashish Yadav</h5>
+									<p>-Student</p>
+								</div>
+								<div class="testimonial-content">
+									<p>I was a student in Advanced batch. In starting I didn't had proper knowledge of Option Selling and what are different types of strike price, but later after Mr. Aman Srivastav Course I got much clearity about these things plus I learned much about how to manage our psychology during live trading session with full patience and dedication.</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimonial-bx">
+								<div class="testimonial-thumb">
+									<img src="{% static 'images/avatars/female-person-1.jpg' %}" alt="">
+								</div>
+								<div class="testimonial-info">
+									<h5 class="name">Diksha Yadav</h5>
+									<p>-Student</p>
+								</div>
+								<div class="testimonial-content">
+									<p>I was a beginner in stock market, but after learning from this course I found that there were many changes in my trading style, my risk reward ratios are perfect now and now I'm profitable trader.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Testimonials END -->
+			
+			
+        </div>
+		<!-- contact area END -->
+    </div>
+    <!-- Content END-->
+
+{% endblock %}
+

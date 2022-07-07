@@ -1,0 +1,24 @@
+Status:
+
+1. Make Promo code bot ✅
+2. Create unique codes for every member + 200 extra codes ✅
+3. Host the bot on server ✅
+4. Rebuild all webpages into django version ✅
+5. Make sign up, login and logout ✅
+6. Create admin panel for database access ✅
+7. Create dashboard page *[Under progress]*
+8. Apply Promo code button
+9. Link with paytm payment api
+10. Host the site on server
+
+
+
+ToDo New:
+Make promo code button small and normal text with underline
+Purchased and Not Purchased buttons
+After purchase, remove Buy, promo button and price button, and add another "Start Course" button href with the telegram channel
+
+Solve the recursion problem in the views.py, this happens when a user who has applied promo code visits the /promo page
+
+Check whether the load, can handle the load of 2000 people or not.
+https://docs.digitalocean.com/products/droplets/concepts/choosing-a-plan/

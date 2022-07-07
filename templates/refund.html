@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Refund Policy{% endblock %}
+
+{% block header %}
+{% include './navbar_template.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-content bg-white">
+	<!-- Page Heading Box ==== -->
+	<!-- inner page banner -->
+	<div class="page-banner ovbl-dark" style="background-image:url({% static 'images/slider/slide2.jpg' %});">
+		<div class="container">
+			<div class="page-banner-entry">
+				<h1 class="text-white" style="padding-top:130px">Refund Policy</h1>
+			 </div>
+		</div>
+	</div>
+	<!-- Breadcrumb row -->
+	<div class="breadcrumb-row">
+		<div class="container">
+			<ul class="list-inline">
+				<li><a href="/">Home</a></li>
+				<li><a href="/refund">Refund Policy</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- Breadcrumb row END -->
+	<!-- Page Content Box ==== -->
+	<div class="content-block">
+		<!-- Your Refund Policy -->
+		<div class="section-area section-sp1">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12">
+						<div class="heading-bx left">
+							<h2 class="m-b10 title-head">Returns and Refunds Policy:</h2>
+						</div>
+						<p class="m-b10">Thank you for shopping at <a href="https://www.intelligent-trader.me" style="color:blue">https://www.intelligent-trader.me</a></p>
+						<p class="m-b10">Non-tangible irrevocable goods ("Digital products")</p>
+						<p class="m-b10">We do not issue refunds for non-tangible irrevocable goods ("digital products") once the order is confirmed and the product is sent.</p>
+						<p class="m-b10">We recommend contacting us for assistance if you experience any issues receiving or downloading our products.</p>
+						<p class="m-b10"><a href="contact.html" style="color:blue">Contact us</a> for any issues: <i>intelligenttrader123@gmail.com</i></p>
+						
+						<div class="row my-5">
+							<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+								<div class="feature-container">
+									<div class="feature-md text-white m-b20">
+										<a href="#" class="icon-cell"><img src="{% static 'images/icon/icon1.png' %}" alt=""></a> 
+									</div>
+									<div class="icon-content">
+										<h5 class="ttr-tilte">Our Philosophy</h5>
+										<p>Our metric for success can be summed up in one phrase: earn customers for life.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+								<div class="feature-container">
+									<div class="feature-md text-white m-b20">
+										<a href="#" class="icon-cell"><img src="{% static 'images/icon/icon2.png' %}" alt=""></a> 
+									</div>
+									<div class="icon-content">
+										<h5 class="ttr-tilte">Excellent Customer Service</h5>
+										<p>We provide best help and support for our customers.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+								<div class="feature-container">
+									<div class="feature-md text-white m-b20">
+										<a href="#" class="icon-cell"><img src="{% static 'images/icon/icon3.png' %}" alt=""></a> 
+									</div>
+									<div class="icon-content">
+										<h5 class="ttr-tilte">Key Of Success</h5>
+										<p>Serving our customers beyond their expectations.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+								<div class="feature-container">
+									<div class="feature-md text-white m-b20">
+										<a href="#" class="icon-cell"><img src="{% static 'images/icon/icon4.png' %}" alt=""></a> 
+									</div>
+									<div class="icon-content">
+										<h5 class="ttr-tilte">User Privacy</h5>
+										<p>User data and privacy is our top priority.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="col-lg-4 col-md-12">
+						<form class="contact-bx dzForm" action="http://educhamp.themetrades.com/demo/script/contact.php">
+						<div class="dzFormMsg"></div>
+							<div class="heading-bx left">
+								<h2 class="title-head">Get In <span>Touch</span></h2>
+								<p>It is a long established fact that a reader will be distracted by the readable content of a page</p>
+							</div>
+							<div class="row placeani">
+								<div class="col-lg-6 ">
+									<div class="form-group">
+										<div class="input-group">
+											<label>Your Name</label>
+											<input name="dzName" type="text" required class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<div class="input-group"> 
+											<label>Your Email Address</label>
+											<input name="dzEmail" type="email" class="form-control" required >
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<div class="input-group">
+											<label>Your Phone</label>
+											<input name="dzOther[Phone]" type="text" required class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<div class="input-group">
+											<label>Subject</label>
+											<input name="dzOther[Subject]" type="text" required class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="form-group">
+										<div class="input-group">
+											<label>Type Message</label>
+											<textarea name="dzMessage" rows="4" class="form-control" required ></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="g-recaptcha" data-sitekey="6LefsVUUAAAAADBPsLZzsNnETChealv6PYGzv3ZN" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+											<input class="form-control d-none" style="display:none;" data-recaptcha="true" required data-error="Please complete the Captcha">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<button name="submit" type="submit" value="Submit" class="btn button-md"> Send Message</button>
+								</div>
+							</div>
+						</form>
+					</div> -->
+				</div>
+				
+			</div>
+		</div>
+		<!-- Your Refund Policy End -->
+	</div>
+
+
+
+	
+
+{% endblock %}

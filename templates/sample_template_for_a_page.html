@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About{% endblock %}
+
+{% block header %}
+{% include './navbar_template.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-content bg-white">
+	<!-- Page Heading Box ==== -->
+	<!-- inner page banner -->
+	<div class="page-banner ovbl-dark" style="background-image:url({% static 'images/slider/slide2.jpg' %});">
+		<div class="container">
+			<div class="page-banner-entry">
+				<h1 class="text-white" style="padding-top:130px">About</h1>
+			 </div>
+		</div>
+	</div>
+	<!-- Breadcrumb row -->
+	<div class="breadcrumb-row">
+		<div class="container">
+			<ul class="list-inline">
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- Breadcrumb row END -->
+	<!-- Page Content Box ==== -->
+
+    Write the page content here
+
+
+	
+
+{% endblock %}

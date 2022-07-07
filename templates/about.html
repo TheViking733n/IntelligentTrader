@@ -1,0 +1,327 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About{% endblock %}
+
+{% block header %}
+{% include './navbar_template.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-content bg-white">
+	<!-- Page Heading Box ==== -->
+	<!-- inner page banner -->
+	<div class="page-banner ovbl-dark" style="background-image:url({% static 'images/slider/slide2.jpg' %});">
+		<div class="container">
+			<div class="page-banner-entry">
+				<h1 class="text-white" style="padding-top:130px">About</h1>
+			 </div>
+		</div>
+	</div>
+	<!-- Breadcrumb row -->
+	<div class="breadcrumb-row">
+		<div class="container">
+			<ul class="list-inline">
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- Breadcrumb row END -->
+	<!-- Page Content Box ==== -->
+	<div class="content-block">
+		<!-- About Us ==== -->
+		<div class="section-area section-sp1">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 m-b30">
+						<h2 class="title-head ">Learn trading skill online<br /> <span class="text-primary"> on
+								your time</span></h2>
+						<h5 class="fw4">We are Intelligent Trader, One of the fastest growing <a href="https://www.youtube.com/channel/UCxQcko8W3B2dQGUww_nzOuA?sub_confirmation=1"
+							style="color:blue">youtube channel</a> of
+							stock market. We take daily live trading sessions on youtube live and give a great
+							education to our audience.</h5>
+						<h5 class="fw4">We serve as a medium so that people can learn each and every term of
+							stock market what are different types of candlestick patterns, chart patterns, about
+							indicators and much more. </h5>
+
+						<!-- <a href="https://www.youtube.com/channel/UCxQcko8W3B2dQGUww_nzOuA?sub_confirmation=1"
+							class="btn "
+							style="background-color: red; color: white; font-size: 20px; font-weight:bold;">Subscribe</a> -->
+					</div>
+
+					<div class="col-lg-12">
+						<div class="row my-5">
+							<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+								<div class="feature-container">
+									<div class="feature-md text-white m-b20">
+										<a href="#" class="icon-cell"><img src="{% static 'images/icon/icon1.png' %}"
+												alt=""></a>
+									</div>
+									<div class="icon-content">
+										<h5 class="ttr-tilte">Our Philosophy</h5>
+										<p>Our metric for success can be summed up in one phrase: earn customers
+											for life.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+								<div class="feature-container">
+									<div class="feature-md text-white m-b20">
+										<a href="#" class="icon-cell"><img src="{% static 'images/icon/icon2.png' %}"
+												alt=""></a>
+									</div>
+									<div class="icon-content">
+										<h5 class="ttr-tilte">Excellent Customer Service</h5>
+										<p>We provide best help and support for our customers.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+								<div class="feature-container">
+									<div class="feature-md text-white m-b20">
+										<a href="#" class="icon-cell"><img src="{% static 'images/icon/icon3.png' %}"
+												alt=""></a>
+									</div>
+									<div class="icon-content">
+										<h5 class="ttr-tilte">Key Of Success</h5>
+										<p>Serving our customers beyond their expectations.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+								<div class="feature-container">
+									<div class="feature-md text-white m-b20">
+										<a href="#" class="icon-cell"><img src="{% static 'images/icon/icon4.png' %}"
+												alt=""></a>
+									</div>
+									<div class="icon-content">
+										<h5 class="ttr-tilte">User Privacy</h5>
+										<p>User data and privacy is our top priority.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 col-lg-12">
+					<h5 class="fw4">We also take educational purpose classes in online mode for which we have a
+						<a href="https://www.intelligent-trader.me/"
+							style="color:blue">website</a>, where you can simply buy our different types of course.</h5>
+					<h5 class="fw4"></h5>
+					
+					<h5 class="m-b5">There are mainly two types of course live at present and if anything added will be updated here very soon:</h5>
+					<ul class="list-checked primary">
+						<li>Beginner's Booster Course'</li>
+						<li>Advanced Conqueror Course</li>
+					</ul>
+				</div>
+				<p>These course have many chapters and will give you a full overview of stock market and you will get a deep knowledge how to earn from stock market.</p>
+				
+				
+			</div>
+		</div>
+		<!-- About Us END ==== -->
+		<!-- Why Choose ==== -->
+		<!-- <div class="section-area bg-gray section-sp2 choose-bx">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 heading-bx text-center">
+						<h2 class="title-head text-uppercase m-b0">Why Choose <span> Our Institution</span></h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+							Ipsum has been the industry's.</p>
+					</div>
+				</div>
+				<div class="row choose-bx-in">
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<div class="service-bx">
+							<div class="action-box">
+								<img src="assets/images/our-services/pic1.jpg" alt="">
+							</div>
+							<div class="info-bx text-center">
+								<div class="feature-box-sm radius bg-white">
+									<i class="fa fa-bank text-primary"></i>
+								</div>
+								<h4><a href="#">Best Industry Leaders</a></h4>
+								<a href="#" class="btn radius-xl">View More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<div class="service-bx">
+							<div class="action-box">
+								<img src="assets/images/our-services/pic2.jpg" alt="">
+							</div>
+							<div class="info-bx text-center">
+								<div class="feature-box-sm radius bg-white">
+									<i class="fa fa-book text-primary"></i>
+								</div>
+								<h4><a href="#">Learn Courses Online</a></h4>
+								<a href="#" class="btn radius-xl">View More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12">
+						<div class="service-bx m-b0">
+							<div class="action-box">
+								<img src="assets/images/our-services/pic3.jpg" alt="">
+							</div>
+							<div class="info-bx text-center">
+								<div class="feature-box-sm radius bg-white">
+									<i class="fa fa-file-text-o text-primary"></i>
+								</div>
+								<h4><a href="#">Book Library & Store</a></h4>
+								<a href="#" class="btn radius-xl">View More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!-- Why Choose END ==== -->
+		<!-- Company Status ==== -->
+		<!-- <div class="section-area content-inner section-sp1">
+			<div class="container">
+				<div class="section-content">
+					<div class="row">
+						<div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
+							<div class="counter-style-1">
+								<div class="text-primary">
+									<span class="counter">3000</span><span>+</span>
+								</div>
+								<span class="counter-text">Completed Projects</span>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
+							<div class="counter-style-1">
+								<div class="text-black">
+									<span class="counter">2500</span><span>+</span>
+								</div>
+								<span class="counter-text">Happy Clients</span>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
+							<div class="counter-style-1">
+								<div class="text-primary">
+									<span class="counter">1500</span><span>+</span>
+								</div>
+								<span class="counter-text">Questions Answered</span>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
+							<div class="counter-style-1">
+								<div class="text-black">
+									<span class="counter">1000</span><span>+</span>
+								</div>
+								<span class="counter-text">Ordered Coffee's</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!-- Company Stats END ==== -->
+		<!-- Our Story ==== -->
+		<div class="section-area bg-gray section-sp1 our-story">
+			<div class="container">
+				<div class="row align-items-center d-flex">
+					<div class="col-lg-5 col-md-12 heading-bx">
+						<h2 class="m-b10">Mr Aman Srivastav</h2>
+						<h5 class="fw4">Our Instructor is <i>Mr Aman Srivastav</i>, who mainly gives too much
+							knowledge to each everyone on live stream as well as in courses . He is in stock
+							market for more than 3 years and has a deep knowledge about different types of
+							trading and investment strategies.</h5>
+						<h5 class="fw4">We want all of you to include in our family of Intelligent trader so
+							that our Indian community can also learn much about stock market.</h5>
+						<!-- <a href="#" class="btn">Read More</a> -->
+					</div>
+					<div class="col-lg-7 col-md-12 heading-bx p-lr">
+
+						<div class="video-bx">
+							<img src="{% static 'images/youtube_ss.jpg' %}" alt="" />
+							<a href="https://www.youtube.com/watch?v=K1dz4kxDM-4" class="popup-youtube video"><i
+									class="fa fa-play"></i></a>
+							<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/K1dz4kxDM-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- Our Story END ==== -->
+		<!-- Testimonials -->
+		<div class="section-area section-sp2 bg-fix ovbl-dark"
+			style="background-image:url({% static 'images/background/bg1.jpg' %});">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-white heading-bx left">
+						<h2 class="title-head text-uppercase">Don't Take Our Word For It. Hear What Our
+							Customers<span> Say.</span></h2>
+						<p>We love our fans and crafty friends! See what some of them have to say about us! We
+							take our work seriously and want you to be happy. We’re proud and honored to have
+							received thousands of positive comments!</p>
+					</div>
+				</div>
+				<div class="testimonial-carousel owl-carousel owl-btn-1 col-12 p-lr0">
+					<div class="item">
+						<div class="testimonial-bx">
+							<div class="testimonial-thumb">
+								<img src="{% static 'images/avatars/male-person-2.jpg' %}" alt="">
+							</div>
+							<div class="testimonial-info">
+								<h5 class="name">Anant Prakash</h5>
+								<p>-Student</p>
+							</div>
+							<div class="testimonial-content">
+								<p>After attending course I got great knowledge and experience from Sir in the
+									field of stock market. Sir has taught all the lessons very properly and with
+									full energy. He also kept us always motivated so that we can trade best in
+									upcoming days. </p>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimonial-bx">
+							<div class="testimonial-thumb">
+								<img src="{% static 'images/avatars/male-person-4.jpg' %}" alt="">
+							</div>
+							<div class="testimonial-info">
+								<h5 class="name">Ashish Yadav</h5>
+								<p>-Student</p>
+							</div>
+							<div class="testimonial-content">
+								<p>I was a student in Advanced batch. In starting I didn't had proper knowledge
+									of Option Selling and what are different types of strike price, but later
+									after Mr. Aman Srivastav Course I got much clearity about these things plus
+									I learned much about how to manage our psychology during live trading
+									session with full patience and dedication.</p>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimonial-bx">
+							<div class="testimonial-thumb">
+								<img src="{% static 'images/avatars/female-person-1.jpg' %}" alt="">
+							</div>
+							<div class="testimonial-info">
+								<h5 class="name">Diksha Yadav</h5>
+								<p>-Student</p>
+							</div>
+							<div class="testimonial-content">
+								<p>I was a beginner in stock market, but after learning from this course I found
+									that there were many changes in my trading style, my risk reward ratios are
+									perfect now and now I'm profitable trader.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Testimonials END -->
+	</div>
+	<!-- Page Content Box END ==== -->
+</div>
+
+{% endblock %}
