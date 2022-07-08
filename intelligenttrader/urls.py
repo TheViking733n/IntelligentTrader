@@ -7,6 +7,7 @@ admin.site.site_header = 'Intelligent Trader Admin Panel'
 
 urlpatterns = [
     path('', include('home.urls')),
+    path('admin', admin.site.urls),
     path('admin/', admin.site.urls),
 ]
 

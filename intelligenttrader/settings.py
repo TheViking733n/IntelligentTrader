@@ -82,15 +82,15 @@ WSGI_APPLICATION = 'intelligenttrader.wsgi.application'
 #     }
 # }
 
-# from decouple import config
-# DATABASE_URL = config('POSTGRES_URL')
-# import dj_database_url
+from decouple import config
+DATABASE_URL = config('POSTGRES_URL')
+import dj_database_url
 DATABASES = {}
-# DATABASES['default'] = dj_database_url.parse(
-#     url=DATABASE_URL,
-#     # conn_max_age=600,
-#     # conn_health_checks=True,
-# )
+DATABASES['default'] = dj_database_url.parse(
+    url=DATABASE_URL,
+    # conn_max_age=600,
+    # conn_health_checks=True,
+)
 
 
 # Password validation
@@ -138,7 +138,7 @@ STATIC_URL = 'static/'
 
 import os
 # For Vercel deployment
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
