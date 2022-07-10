@@ -83,7 +83,8 @@ WSGI_APPLICATION = 'intelligenttrader.wsgi.application'
 # }
 
 from decouple import config
-DATABASE_URL = config('POSTGRES_URL')
+# DATABASE_URL = config('POSTGRES_URL')
+DATABASE_URL = config('ELEPHANTSQL_URL')
 import dj_database_url
 DATABASES = {}
 DATABASES['default'] = dj_database_url.parse(
