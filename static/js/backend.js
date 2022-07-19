@@ -2095,3 +2095,46 @@ function tokenize( selector, parseOnly ) {
 
 				// Don't consume trailing commas as valid
 				soFar = soFar.slice( match[ 0 ].length ) || soFar;
+			}
+			groups.push( ( tokens = [] ) );
+		}
+
+		matched = false;
+
+		// Combinators
+		if ( ( match = rleadingCombinator.exec( soFar ) ) ) {
+			matched = match.shift();
+			tokens.push( {
+				value: matched,
+
+				// Cast descendant combinators to space
+				type: match[ 0 ].replace( rtrimCSS, " " )
+			} );
+			soFar = soFar.slice( matched.length );
+		}
+
+		// Filters
+		for ( type in Expr.filter ) {
+			if ( ( match = matchExpr[ type ].exec( soFar ) ) && ( !preFilters[ type ] ||
+				( match = preFilters[ type ]( match ) ) ) ) {
+				matched = match.shift();
+				tokens.push( {
+					value: matched,
+					type: type,
+					matches: match
+				} );
+				soFar = soFar.slice( matched.length );
+			}
+		}
+
+		if ( !matched ) {
+			break;
+		}
+	}
+
+	// Return the length of the invalid excess
+	// if we're just parsing
+	// Otherwise, throw an error or return tokens
+	if ( parseOnly ) {
+		return soFar.length;
+	}
