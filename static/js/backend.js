@@ -1924,3 +1924,46 @@ Expr = jQuery.expr = {
 		},
 
 		root: function( elem ) {
+			return elem === documentElement;
+		},
+
+		focus: function( elem ) {
+			return elem === safeActiveElement() &&
+				document.hasFocus() &&
+				!!( elem.type || elem.href || ~elem.tabIndex );
+		},
+
+		// Boolean properties
+		enabled: createDisabledPseudo( false ),
+		disabled: createDisabledPseudo( true ),
+
+		checked: function( elem ) {
+
+			// In CSS3, :checked should return both checked and selected elements
+			// https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
+			return ( nodeName( elem, "input" ) && !!elem.checked ) ||
+				( nodeName( elem, "option" ) && !!elem.selected );
+		},
+
+		selected: function( elem ) {
+
+			// Support: IE <=11+
+			// Accessing the selectedIndex property
+			// forces the browser to treat the default option as
+			// selected when in an optgroup.
+			if ( elem.parentNode ) {
+				// eslint-disable-next-line no-unused-expressions
+				elem.parentNode.selectedIndex;
+			}
+
+			return elem.selected === true;
+		},
+
+		// Contents
+		empty: function( elem ) {
+
+			// https://www.w3.org/TR/selectors/#empty-pseudo
+			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
+			//   but not by others (comment: 8; processing instruction: 7; etc.)
+			// nodeType < 6 works because attributes (2) do not appear as children
+			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
