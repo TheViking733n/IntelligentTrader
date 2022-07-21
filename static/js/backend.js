@@ -2652,3 +2652,46 @@ function select( selector, context, results, seed ) {
 						push.apply( results, seed );
 						return results;
 					}
+
+					break;
+				}
+			}
+		}
+	}
+
+	// Compile and execute a filtering function if one is not provided
+	// Provide `match` to avoid retokenization if we modified the selector above
+	( compiled || compile( selector, match ) )(
+		seed,
+		context,
+		!documentIsHTML,
+		results,
+		!context || rsibling.test( selector ) && testContext( context.parentNode ) || context
+	);
+	return results;
+}
+
+// One-time assignments
+
+// Support: Android <=4.0 - 4.1+
+// Sort stability
+support.sortStable = expando.split( "" ).sort( sortOrder ).join( "" ) === expando;
+
+// Initialize against the default document
+setDocument();
+
+// Support: Android <=4.0 - 4.1+
+// Detached nodes confoundingly follow *each other*
+support.sortDetached = assert( function( el ) {
+
+	// Should return 1, but returns 4 (following)
+	return el.compareDocumentPosition( document.createElement( "fieldset" ) ) & 1;
+} );
+
+jQuery.find = find;
+
+// Deprecated
+jQuery.expr[ ":" ] = jQuery.expr.pseudos;
+jQuery.unique = jQuery.uniqueSort;
+
+// These have always been private, but they used to be documented
