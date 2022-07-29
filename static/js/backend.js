@@ -5221,3 +5221,46 @@ jQuery.event = {
 						return hook( this.originalEvent );
 					}
 				} :
+				function() {
+					if ( this.originalEvent ) {
+						return this.originalEvent[ name ];
+					}
+				},
+
+			set: function( value ) {
+				Object.defineProperty( this, name, {
+					enumerable: true,
+					configurable: true,
+					writable: true,
+					value: value
+				} );
+			}
+		} );
+	},
+
+	fix: function( originalEvent ) {
+		return originalEvent[ jQuery.expando ] ?
+			originalEvent :
+			new jQuery.Event( originalEvent );
+	},
+
+	special: {
+		load: {
+
+			// Prevent triggered image.load events from bubbling to window.load
+			noBubble: true
+		},
+		click: {
+
+			// Utilize native event to ensure correct state for checkable inputs
+			setup: function( data ) {
+
+				// For mutual compressibility with _default, replace `this` access with a local var.
+				// `|| data` is dead code meant only to preserve the variable through minification.
+				var el = this || data;
+
+				// Claim the first handler
+				if ( rcheckableType.test( el.type ) &&
+					el.click && nodeName( el, "input" ) ) {
+
+					// dataPriv.set( el, "click", ... )
