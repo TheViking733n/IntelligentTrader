@@ -5863,3 +5863,46 @@ function domManip( collection, args, callback, ignored ) {
 		value = args[ 0 ],
 		valueIsFunction = isFunction( value );
 
+	// We can't cloneNode fragments that contain checked, in WebKit
+	if ( valueIsFunction ||
+			( l > 1 && typeof value === "string" &&
+				!support.checkClone && rchecked.test( value ) ) ) {
+		return collection.each( function( index ) {
+			var self = collection.eq( index );
+			if ( valueIsFunction ) {
+				args[ 0 ] = value.call( this, index, self.html() );
+			}
+			domManip( self, args, callback, ignored );
+		} );
+	}
+
+	if ( l ) {
+		fragment = buildFragment( args, collection[ 0 ].ownerDocument, false, collection, ignored );
+		first = fragment.firstChild;
+
+		if ( fragment.childNodes.length === 1 ) {
+			fragment = first;
+		}
+
+		// Require either new content or an interest in ignored elements to invoke the callback
+		if ( first || ignored ) {
+			scripts = jQuery.map( getAll( fragment, "script" ), disableScript );
+			hasScripts = scripts.length;
+
+			// Use the original fragment for the last item
+			// instead of the first because it can end up
+			// being emptied incorrectly in certain situations (trac-8070).
+			for ( ; i < l; i++ ) {
+				node = fragment;
+
+				if ( i !== iNoClone ) {
+					node = jQuery.clone( node, true, true );
+
+					// Keep references to cloned scripts for later restoration
+					if ( hasScripts ) {
+
+						// Support: Android <=4.0 only, PhantomJS 1 only
+						// push.apply(_, arraylike) throws on ancient WebKit
+						jQuery.merge( scripts, getAll( node, "script" ) );
+					}
+				}
