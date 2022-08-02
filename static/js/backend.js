@@ -6720,3 +6720,45 @@ jQuery.extend( {
 	cssHooks: {
 		opacity: {
 			get: function( elem, computed ) {
+				if ( computed ) {
+
+					// We should always get a number back from opacity
+					var ret = curCSS( elem, "opacity" );
+					return ret === "" ? "1" : ret;
+				}
+			}
+		}
+	},
+
+	// Don't automatically add "px" to these possibly-unitless properties
+	cssNumber: {
+		animationIterationCount: true,
+		aspectRatio: true,
+		borderImageSlice: true,
+		columnCount: true,
+		flexGrow: true,
+		flexShrink: true,
+		fontWeight: true,
+		gridArea: true,
+		gridColumn: true,
+		gridColumnEnd: true,
+		gridColumnStart: true,
+		gridRow: true,
+		gridRowEnd: true,
+		gridRowStart: true,
+		lineHeight: true,
+		opacity: true,
+		order: true,
+		orphans: true,
+		scale: true,
+		widows: true,
+		zIndex: true,
+		zoom: true,
+
+		// SVG-related
+		fillOpacity: true,
+		floodOpacity: true,
+		stopOpacity: true,
+		strokeMiterlimit: true,
+		strokeOpacity: true
+	},
