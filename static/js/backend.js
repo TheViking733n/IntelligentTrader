@@ -8133,3 +8133,88 @@ function getClass( elem ) {
 	return elem.getAttribute && elem.getAttribute( "class" ) || "";
 }
 
+function classesToArray( value ) {
+	if ( Array.isArray( value ) ) {
+		return value;
+	}
+	if ( typeof value === "string" ) {
+		return value.match( rnothtmlwhite ) || [];
+	}
+	return [];
+}
+
+jQuery.fn.extend( {
+	addClass: function( value ) {
+		var classNames, cur, curValue, className, i, finalValue;
+
+		if ( isFunction( value ) ) {
+			return this.each( function( j ) {
+				jQuery( this ).addClass( value.call( this, j, getClass( this ) ) );
+			} );
+		}
+
+		classNames = classesToArray( value );
+
+		if ( classNames.length ) {
+			return this.each( function() {
+				curValue = getClass( this );
+				cur = this.nodeType === 1 && ( " " + stripAndCollapse( curValue ) + " " );
+
+				if ( cur ) {
+					for ( i = 0; i < classNames.length; i++ ) {
+						className = classNames[ i ];
+						if ( cur.indexOf( " " + className + " " ) < 0 ) {
+							cur += className + " ";
+						}
+					}
+
+					// Only assign if different to avoid unneeded rendering.
+					finalValue = stripAndCollapse( cur );
+					if ( curValue !== finalValue ) {
+						this.setAttribute( "class", finalValue );
+					}
+				}
+			} );
+		}
+
+		return this;
+	},
+
+	removeClass: function( value ) {
+		var classNames, cur, curValue, className, i, finalValue;
+
+		if ( isFunction( value ) ) {
+			return this.each( function( j ) {
+				jQuery( this ).removeClass( value.call( this, j, getClass( this ) ) );
+			} );
+		}
+
+		if ( !arguments.length ) {
+			return this.attr( "class", "" );
+		}
+
+		classNames = classesToArray( value );
+
+		if ( classNames.length ) {
+			return this.each( function() {
+				curValue = getClass( this );
+
+				// This expression is here for better compressibility (see addClass)
+				cur = this.nodeType === 1 && ( " " + stripAndCollapse( curValue ) + " " );
+
+				if ( cur ) {
+					for ( i = 0; i < classNames.length; i++ ) {
+						className = classNames[ i ];
+
+						// Remove *all* instances
+						while ( cur.indexOf( " " + className + " " ) > -1 ) {
+							cur = cur.replace( " " + className + " ", " " );
+						}
+					}
+
+					// Only assign if different to avoid unneeded rendering.
+					finalValue = stripAndCollapse( cur );
+					if ( curValue !== finalValue ) {
+						this.setAttribute( "class", finalValue );
+					}
+				}
