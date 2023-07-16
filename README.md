@@ -1,6 +1,6 @@
-# Intelligent Trader Course Selling Website
+# Intelligent Trader Website
 
-![Intelligent Trader Logo](/assets/images/logo-400.png)
+![home](https://github.com/TheViking733n/IntelligentTrader/assets/69471106/75f2a029-2228-4caf-b3b7-364351d550d2)
 
 This is the official repository for the Intelligent Trader Course Selling Website, a full-stack ecommerce platform developed for the Intelligent Trader YouTube Channel, which has over 200k subscribers. The website provides a seamless user experience for customers to purchase online courses offered by Intelligent Trader.
 
